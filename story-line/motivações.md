@@ -55,7 +55,7 @@ Perils:
 4. Portal dos espíritos
 
 
-## Sorcereer:
+## Sorcerer: - Cidade Efeso, Reino Helenia
 
 1. Cidade natal atacada por dragoes - Cidade Efeso, Reino Helenia
 2. Aparato que provava a imutabilidade do destino? (feito por seu irmão)
@@ -77,21 +77,21 @@ mostra, entregou-me a carta, portando em seu dedo anelar um anel com um sinete
 que até hoje tem seu significado desconhecido para mim.
 
 
-## Duruid:
+## Duruid: - Floresta de Eldertir
 
 1. Floresta de Eldertir destruida por orcs
 
 2. Arvore Anciã
 
-## Rogue:
+## Rogue: - JuranCity
 
 1. Filho de Florisbela (bordel de Jurandir)
 
-2. Anão Lindomar (lendário Anão) - Lider dos mineiros das minas deJurandir
+2. Anão Lindomar (lendário Anão) - Lider dos mineiros das minas de Jurandir
 
 3. Criado por Jorginho - Cafetão local
 
-## Cleric
+## Cleric - Eartheart, Underhome
 
 1. Nascido em Eartheart (principal assentamento dos anoes do ouro) em East Rigt
 
