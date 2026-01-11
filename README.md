@@ -4,22 +4,20 @@
 
 1. Go to Foundry VTT server: https://dnd-maroto.fly.dev/setup
 2. Create backup manually
-3. Login to fly.io via SSH:
+3. Run the backup script with a date parameter:
    ```bash
-   flyctl ssh console -a dnd-maroto
+   bash scripts/backup.sh 2026-01-18
    ```
-4. List all files inside backup folder
+   Date format: `YYYY-MM-DD` (e.g., `2026-01-18`)
+
+   To preview files without downloading, use `--dry-run`:
    ```bash
-   find "/home/foundry/data/Backups" -type f
-   ```
-5. Copy the file full paths from the terminal
-6. Add the full path to the array on the backup.sh script
-7. Run the backup script:
-   ```bash
-   bash scripts/backup.sh
+   bash scripts/backup.sh 2026-01-18 --dry-run
    ```
 
-The script will download backups to `.backup/dnd-maroto_<date>/` preserving the directory structure.
+The script will automatically fetch all files from `/home/foundry/data/` on the remote server and download them, backing up all folders (Backups, Config, Data, etc.).
+
+The script will download files to `.backup/<date>/` preserving the directory structure (e.g., `.backup/2026-01-18/Backups/...`, `.backup/2026-01-18/Config/...`).
 
 ## Extend volume
 1. List volumes

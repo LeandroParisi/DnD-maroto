@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for dnd-maroto on 2024-02-17T17:26:49-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'dnd-maroto'
+primary_region = 'gru'
+
+[build]
+
+[[mounts]]
+  source = 'foundryvtt_data'
+  destination = '/home/foundry/data'
+  initial_size = '7gb'
+
+[http_service]
+  internal_port = 30000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

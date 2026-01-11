@@ -7,6 +7,48 @@ This repository provides a simple Dockerfile to run [Foundry VTT](https://foundr
 - A Foundry VTT distribution (`foundryvtt-x.y.z.zip` unpacked into a `foundryvtt` directory)
 - Docker
 
+
+## Setup
+1. [Download foundryvtt latest Linux version](https://foundryvtt.com/community/leandroparisi/licenses)
+2. Extract files from downloaded zip
+3. Put all files (raw files, without a top level folder) inside foundryvtt folder
+4. Move Dockerfile inside this folder into foundryvtt folder
+5. Build the image
+```
+  docker build -t foundryvtt .
+```
+6. For local testing, create data folder
+```
+  mkdir ./data
+```
+7. Run image
+```
+  docker run --name fvtt \
+  -p 30000:30000 \
+  -v `pwd`/data:/home/foundry/data \
+  -d foundryvtt
+```
+8. Test accessing localhost:30000
+
+
+## Deploy
+1. Delete data folder inside foundryvtt
+2. Move fly.toml into foundryvtt folder
+3. Run (from inside foundryvtt folder)
+```
+  fly deploy
+```
+
+## Scripts
+1. Increase volume size (size in GB)
+```
+  fly volumes extend foundryvtt_data --size 10 
+```
+
+
+_________________________________
+
+# DEPRECATED
 ## Usage
 
 ### Manual
