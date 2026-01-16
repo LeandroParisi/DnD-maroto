@@ -19,6 +19,45 @@ The script will automatically fetch all files from `/home/foundry/data/` on the 
 
 The script will download files to `.backup/<date>/` preserving the directory structure (e.g., `.backup/2026-01-18/Backups/...`, `.backup/2026-01-18/Config/...`).
 
+## Upload maps
+
+Upload all maps from `.maps/` folder to the Foundry server.
+
+**Basic usage:**
+```bash
+bash scripts/upload-maps.sh
+```
+
+This will upload all files from `.maps/` to `/home/foundry/data/Data/assets/Maps` on the remote server, preserving the folder structure.
+
+**Options:**
+- `--dry-run`: Preview files without uploading
+  ```bash
+  bash scripts/upload-maps.sh --dry-run
+  ```
+
+- `--number-of-files=N`: Upload only the first N files (useful for testing)
+  ```bash
+  bash scripts/upload-maps.sh --number-of-files=10
+  ```
+
+**Examples:**
+```bash
+# Upload all maps
+bash scripts/upload-maps.sh
+
+# Preview what would be uploaded
+bash scripts/upload-maps.sh --dry-run
+
+# Upload only first 5 files (for testing)
+bash scripts/upload-maps.sh --number-of-files=5
+
+# Combine options
+bash scripts/upload-maps.sh --number-of-files=20 --dry-run
+```
+
+The script will automatically create the necessary directory structure on the remote server and show progress for each file uploaded.
+
 ## Extend volume
 1. List volumes
 ```bash
@@ -29,3 +68,8 @@ The script will download files to `.backup/<date>/` preserving the directory str
 ```bash
    fly volumes extend vol_remjy95yxw7y5kd4 -a dnd-maroto -s 7
 ```
+
+## Scripts
+1. Log in to machine with ssh
+   flyctl ssh console -a dnd-maroto
+   
